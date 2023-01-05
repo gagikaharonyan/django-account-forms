@@ -1,0 +1,1 @@
+from django_account_forms import signals
