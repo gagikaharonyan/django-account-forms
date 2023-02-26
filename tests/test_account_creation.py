@@ -10,7 +10,7 @@ User = get_user_model()
 
 class CreateAccountTestCase(TestCase, UserMixin):
     @override_settings({'AUTO_VERIFY_ACCOUNT': False})
-    def test_user_correctly_created(self):
+    def test_user_correctly_created_with_verify_email(self):
         email = 'test@gmail.com'
         password1 = 'PASS'
         password2 = 'PASS'
@@ -83,4 +83,3 @@ class CreateAccountTestCase(TestCase, UserMixin):
         user = form.save()
 
         self.assertEqual(user.first_name, edited_first_name)
-
